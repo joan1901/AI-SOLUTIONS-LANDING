@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Solutions - Revoluciona tu Fábrica</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn-contacto {
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #ff007a, #ffb400, #ffd700);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-contacto:hover {
+      filter: brightness(1.1);
+    }
+  </style>
 </head>
 <body class="bg-black text-white font-sans">
 
@@ -89,11 +104,10 @@
   <section id="contacto" class="py-16 px-6 bg-gradient-to-r from-pink-600 to-yellow-500 text-center text-black">
     <h2 class="text-4xl font-bold mb-4">¿Quieres recibir una demo?</h2>
     <p class="text-lg mb-6">También buscamos testers industriales, aliados y comerciales con visión.</p>
-    <a <button id="btn-contacto" class="btn">Contacto</button> 
-    </a>
+    <button id="btn-contacto" class="btn-contacto">Contacto</button>
   </section>
 
-  <!-- Modal -->
+  <!-- Modal DEMO -->
   <div id="demoModal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full relative">
       <button onclick="document.getElementById('demoModal').classList.add('hidden')"
@@ -105,57 +119,63 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="py-6 text-center text-sm text-gray-500 bg-black">
-    © 2025 AI Solutions · contacto@aisolutions.com
-  </footer>
-
-<div id="contactModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#1c1c1e; padding:24px; border-radius:16px; width:90%; max-width:400px; text-align:center; position:relative;">
-    <button id="closeModal" style="position:absolute; top:16px; right:16px; background:none; border:none; color:#ffffff; font-size:1.5rem;">×</button>
-    <div id="formContainer">
-      <h2 style="color:#FFD700; margin-bottom:16px;">
-        ¿Te interesa contactarnos o recibir <span style="color:#FFD700;">más información</span>?
-      </h2>
-      <form id="contactForm" style="display:flex; flex-direction:column; gap:12px;">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;">
-        <input type="email" name="email" placeholder="Tu correo electrónico" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;">
-        <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;"></textarea>
-        <button type="submit" style="padding:14px; border:none; border-radius:999px; background:linear-gradient(90deg, #ff007a, #ffb400, #ffd700); color:black; font-weight:bold;">
-          Enviar solicitud
-        </button>
-      </form>
+  <!-- Modal Contacto -->
+  <div id="contactModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#1c1c1e; padding:24px; border-radius:16px; width:90%; max-width:400px; text-align:center; position:relative;">
+      <button id="closeModal" style="position:absolute; top:16px; right:16px; background:none; border:none; color:#ffffff; font-size:1.5rem;">×</button>
+      <div id="formContainer">
+        <h2 style="color:#FFD700; margin-bottom:16px;">
+          ¿Te interesa contactarnos o recibir <span style="color:#FFD700;">más información</span>?
+        </h2>
+        <form id="contactForm" style="display:flex; flex-direction:column; gap:12px;">
+          <input type="text" name="nombre" placeholder="Tu nombre completo" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;">
+          <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required style="padding:12px; border-radius:8px; border:none; background:#2a2a2c; color:white;"></textarea>
+          <button type="submit" style="padding:14px; border:none; border-radius:999px; background:linear-gradient(90deg, #ff007a, #ffb400, #ffd700); color:black; font-weight:bold;">
+            Enviar solicitud
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<script>
-  const modal = document.getElementById("contactModal");
-  document.getElementById("btn-contacto").onclick = () => modal.style.display = "flex";
-  document.getElementById("closeModal").onclick = () => modal.style.display = "none";
 
-  document.getElementById("contactForm").onsubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      nombre: form.nombre.value,
-      email: form.email.value,
-      mensaje: form.mensaje.value
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm text-gray-500 bg-black">
+  © 2025 AI Solutions · contacto@aisolutions.com  
+  <span class="block mt-2 text-gray-600 text-xs italic">
+    Desarrollado con el apoyo de inteligencia artificial en cada paso del proceso.
+  </span>
+</footer>
+
+  <!-- Scripts -->
+  <script>
+    const modal = document.getElementById("contactModal");
+    document.getElementById("btn-contacto").onclick = () => modal.style.display = "flex";
+    document.getElementById("closeModal").onclick = () => modal.style.display = "none";
+
+    document.getElementById("contactForm").onsubmit = async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        mensaje: form.mensaje.value
+      };
+      try {
+        await fetch("https://script.google.com/macros/s/AKfycbxlyqiExG1AezLwLkMS5yg2iDHb_DD_urIfkVVnPwMQAXdPYLyRrWVcParQvPcBHZUt/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        document.getElementById("formContainer").innerHTML = `
+          <h2 style='color:#FFD700; font-size:1.25rem; margin:0;'>
+            ¡Gracias por tu interés!<br>Te contactaremos pronto.
+          </h2>`;
+      } catch (err) {
+        console.error(err);
+        alert("Error al enviar. Intenta nuevamente.");
+      }
     };
-    try {
-      await fetch("https://script.google.com/macros/s/AKfycbxlyqiExG1AezLwLkMS5yg2iDHb_DD_urIfkVVnPwMQAXdPYLyRrWVcParQvPcBHZUt/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-      document.getElementById("formContainer").innerHTML = `
-        <h2 style='color:#FFD700; font-size:1.25rem; margin:0;'>
-          ¡Gracias por tu interés!<br>Te contactaremos pronto.
-        </h2>`;
-    } catch (err) {
-      console.error(err);
-      alert("Error al enviar. Intenta nuevamente.");
-    }
-  };
-</script>
+  </script>
 </body>
 </html>
