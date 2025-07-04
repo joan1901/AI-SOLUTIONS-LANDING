@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Solutions - Revoluciona tu Fábrica</title>
+
+  <title>AI Solutions | Automatización con IA para fábricas modernas</title>
+  <meta name="description" content="Soluciones de inteligencia artificial visuales, intuitivas y asequibles para fábricas. Automatiza tareas, mejora el control y ahorra costes.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Solutions | IA para fábricas modernas">
+  <meta property="og:description" content="Transforma tu fábrica con asistentes IA, dashboards visuales y automatización desde el primer día.">
+  <meta property="og:image" content="https://tuweb.com/imagen-preview.jpg">
+  <meta property="og:url" content="https://joan1901.github.io/AI-SOLUTIONS-LANDING/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Solutions | IA para fábricas modernas">
+  <meta name="twitter:description" content="Automatiza procesos industriales con IA sin curva de aprendizaje. Ahorra tiempo y dinero.">
+  <meta name="twitter:image" content="https://tuweb.com/imagen-preview.jpg">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .btn-contacto {
@@ -23,8 +40,7 @@
   </style>
 </head>
 <body class="bg-black text-white font-sans">
-
-  <!-- Encabezado con logo -->
+ <!-- Encabezado con logo -->
   <header class="flex flex-col items-center justify-center py-16 px-6 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-700">
     <img src="logo-ai-solutions.png" alt="AI Solutions Logo" class="h-24 mb-4 drop-shadow-lg" />
     <h1 class="text-5xl font-bold mb-2">AI Solutions</h1>
@@ -172,10 +188,10 @@
         body: JSON.stringify(data)
       });
 
-      document.getElementById("formContainer").innerHTML = `
+      document.getElementById("formContainer").innerHTML = 
         <h2 style='color:#FFD700; font-size:1.25rem; margin:0;'>
           ¡Gracias por tu interés!<br>Te contactaremos pronto.
-        </h2>`;
+        </h2>;
     } catch (err) {
       console.error(err);
       alert("Error al enviar. Intenta nuevamente.");
