@@ -151,34 +151,37 @@
 </footer>
 
   <!-- Scripts -->
-  <script>
-    const modal = document.getElementById("contactModal");
-    document.getElementById("btn-contacto").onclick = () => modal.style.display = "flex";
-    document.getElementById("closeModal").onclick = () => modal.style.display = "none";
+ <script>
+  document.getElementById("contactForm").onsubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    document.getElementById("contactForm").onsubmit = async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const data = {
-        nombre: form.nombre.value,
-        email: form.email.value,
-        mensaje: form.mensaje.value
-      };
-      try {
-        await fetch("https://script.google.com/macros/s/AKfycbxlyqiExG1AezLwLkMS5yg2iDHb_DD_urIfkVVnPwMQAXdPYLyRrWVcParQvPcBHZUt/exec", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-        document.getElementById("formContainer").innerHTML = `
-          <h2 style='color:#FFD700; font-size:1.25rem; margin:0;'>
-            ¡Gracias por tu interés!<br>Te contactaremos pronto.
-          </h2>`;
-      } catch (err) {
-        console.error(err);
-        alert("Error al enviar. Intenta nuevamente.");
-      }
+    const data = {
+      nombre: form.nombre.value,
+      email: form.email.value,
+      mensaje: form.mensaje.value
     };
-  </script>
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxlyqiExG1AezLwLkMS5yg2iDHb_DD_urIfkVVnPwMQAXdPYLyRrWVcParQvPcBHZUt/exec", {
+        method: "POST",
+        mode: "no-cors", // 👈 OBLIGATORIO para evitar CORS
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      document.getElementById("formContainer").innerHTML = `
+        <h2 style='color:#FFD700; font-size:1.25rem; margin:0;'>
+          ¡Gracias por tu interés!<br>Te contactaremos pronto.
+        </h2>`;
+    } catch (err) {
+      console.error(err);
+      alert("Error al enviar. Intenta nuevamente.");
+    }
+  };
+</script>
+ 
 </body>
 </html>
