@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Solutions | Automatización con IA para fábricas modernas</title>
+  <title>AI Solutions | Automatización con IA</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white font-sans">
@@ -18,10 +18,54 @@
     </button>
   </header>
 
-  <!-- OPTIFÁBRICA + VIDEO -->
+  <!-- ¿QUÉ OFRECEMOS? -->
+  <section class="py-16 px-6 bg-zinc-900 text-center">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-8">¿Qué ofrecemos?</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-zinc-800 p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-xl font-bold mb-2 text-pink-400">Automatización</h3>
+        <p>IA para producción, comunicación y ausencias.</p>
+      </div>
+      <div class="bg-zinc-800 p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-xl font-bold mb-2 text-pink-400">Asistentes IA</h3>
+        <p>Desde el primer día, sin curva de aprendizaje.</p>
+      </div>
+      <div class="bg-zinc-800 p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-xl font-bold mb-2 text-pink-400">Paneles visuales</h3>
+        <p>Dashboards intuitivos, rápidos y sin instalación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA -->
+  <section class="py-16 px-6 bg-black text-center">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-8">¿Por qué somos distintos?</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto text-left">
+      <div class="bg-zinc-800 p-6 rounded-xl">
+        <h3 class="text-xl font-bold mb-2 text-red-400">ERP Tradicional</h3>
+        <ul class="list-disc list-inside text-red-300">
+          <li>Costosos</li>
+          <li>Lentos de implementar</li>
+          <li>Requieren formación</li>
+          <li>IA opcional y limitada</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-yellow-500 via-pink-500 to-purple-700 p-6 rounded-xl text-white">
+        <h3 class="text-xl font-bold mb-2">AI Solutions</h3>
+        <ul class="list-disc list-inside">
+          <li>Económico y ágil</li>
+          <li>Implementación en minutos</li>
+          <li>Uso intuitivo desde el primer día</li>
+          <li>IA integrada y activa</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIFÁBRICA -->
   <section class="py-16 px-6 bg-zinc-900 text-center">
     <h2 class="text-3xl font-bold text-yellow-400 mb-6">Caso Destacado: OptiFábrica</h2>
-    <p class="text-lg mb-4 max-w-3xl mx-auto">Una solución completa para fábricas en evolución:</p>
+    <p class="text-lg mb-4 max-w-3xl mx-auto">Una solución creada dentro de planta para digitalizar operaciones:</p>
     <ul class="text-left text-lg list-disc list-inside max-w-xl mx-auto mb-8">
       <li>Seguimiento visual de pedidos por estación</li>
       <li>Asistente IA que resume el día y contesta correos</li>
@@ -30,9 +74,9 @@
       <li><strong class="text-pink-400">Ahorros estimados: 15.000 EUR/año por fábrica</strong></li>
     </ul>
 
-    <!-- VIDEO INTEGRADO -->
+    <!-- VIDEO -->
     <div class="bg-white p-4 rounded-xl shadow-lg max-w-4xl mx-auto">
-      <video class="w-full rounded" poster="preview-ai-solutions.png" controls>
+      <video class="w-full rounded" controls>
         <source src="landing.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
@@ -40,7 +84,7 @@
     <p class="text-sm text-gray-400 mt-3 italic">Demostración del panel OptiFábrica en acción.</p>
   </section>
 
-  <!-- FORMULARIO DE CONTACTO -->
+  <!-- FORMULARIO EN MODAL -->
   <div id="demoModal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full relative">
       <button onclick="document.getElementById('demoModal').classList.add('hidden')" class="absolute top-2 right-4 text-2xl text-gray-700 hover:text-black">&times;</button>
