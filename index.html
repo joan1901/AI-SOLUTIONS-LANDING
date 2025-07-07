@@ -78,16 +78,13 @@
 
     <!-- VIDEO CON BOTÓN -->
     <div class="bg-white p-4 rounded-xl shadow-lg max-w-4xl mx-auto mt-10">
-      <!-- Botón -->
       <button id="playButton" onclick="reproducirDemo()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded hover:bg-indigo-700 transition">
         ▶️ Ver demo del software
       </button>
-
-     <video id="videoDemo" class="w-full rounded hidden mt-4" controls muted autoplay>
-  <source src="d7824dcd-26aa-40e5-9437-dc896b718c66.mp4" type="video/mp4" />
-  Tu navegador no soporta el video.
-</video>
-
+      <video id="videoDemo" class="w-full rounded hidden mt-4" controls muted autoplay>
+        <source src="d7824dcd-26aa-40e5-9437-dc896b718c66.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
       <p id="videoCaption" class="text-sm text-gray-700 mt-2 italic text-center hidden">
         🎥 Demostración real del sistema funcionando
       </p>
@@ -117,7 +114,6 @@
       const video = document.getElementById('videoDemo');
       const boton = document.getElementById('playButton');
       const caption = document.getElementById('videoCaption');
-
       video.classList.remove('hidden');
       caption.classList.remove('hidden');
       boton.classList.add('hidden');
