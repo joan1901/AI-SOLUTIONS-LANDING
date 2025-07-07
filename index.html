@@ -17,9 +17,6 @@
       <button onclick="document.getElementById('demoModal').classList.remove('hidden')" class="bg-white text-pink-600 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition">
         📩 Solicita una demo
       </button>
-      <button onclick="document.getElementById('videoDemo').scrollIntoView({behavior: 'smooth'})" class="bg-white text-indigo-700 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition">
-        ▶️ Ver demo del software
-      </button>
     </div>
   </header>
 
@@ -79,13 +76,22 @@
       <li><strong class="text-pink-400">+15.000€ de ahorro estimado anual por planta</strong></li>
     </ul>
 
-    <!-- VIDEO -->
-    <div id="videoDemo" class="bg-white p-4 rounded-xl shadow-lg max-w-4xl mx-auto mt-10">
-      <video class="w-full rounded" controls>
+    <!-- VIDEO CON BOTÓN -->
+    <div class="bg-white p-4 rounded-xl shadow-lg max-w-4xl mx-auto mt-10">
+      <!-- Botón que aparece primero -->
+      <button id="playButton" onclick="reproducirDemo()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded hover:bg-indigo-700 transition">
+        ▶️ Ver demo del software
+      </button>
+
+      <!-- Video oculto -->
+      <video id="videoDemo" class="w-full rounded hidden mt-4" controls>
         <source src="optifabrica.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
-      <p class="text-sm text-gray-700 mt-2 italic text-center">🎥 Demostración real del sistema funcionando</p>
+
+      <p id="videoCaption" class="text-sm text-gray-700 mt-2 italic text-center hidden">
+        🎥 Demostración real del sistema funcionando
+      </p>
     </div>
   </section>
 
@@ -105,6 +111,20 @@
     © 2025 AI Solutions · contacto@aisolutions.com
     <div class="mt-2 text-gray-600 text-xs italic">Hecho con IA y visión industrial.</div>
   </footer>
+
+  <!-- SCRIPT DEL VIDEO -->
+  <script>
+    function reproducirDemo() {
+      const video = document.getElementById('videoDemo');
+      const boton = document.getElementById('playButton');
+      const caption = document.getElementById('videoCaption');
+
+      video.classList.remove('hidden');
+      caption.classList.remove('hidden');
+      boton.classList.add('hidden');
+      video.play();
+    }
+  </script>
 
 </body>
 </html>
