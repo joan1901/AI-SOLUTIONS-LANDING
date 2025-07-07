@@ -78,14 +78,14 @@
 
     <!-- VIDEO CON BOTÓN -->
     <div class="bg-white p-4 rounded-xl shadow-lg max-w-4xl mx-auto mt-10">
-      <!-- Botón que aparece primero -->
+      <!-- Botón -->
       <button id="playButton" onclick="reproducirDemo()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded hover:bg-indigo-700 transition">
         ▶️ Ver demo del software
       </button>
 
       <!-- Video oculto -->
       <video id="videoDemo" class="w-full rounded hidden mt-4" controls>
-        <source src="optifabrica.mp4" type="video/mp4" />
+        <source src="d7824dcd-26aa-40e5-9437-dc896b718c66.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
 
@@ -95,7 +95,7 @@
     </div>
   </section>
 
-  <!-- MODAL CON FORMULARIO -->
+  <!-- MODAL FORMULARIO -->
   <div id="demoModal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full relative">
       <button onclick="document.getElementById('demoModal').classList.add('hidden')" class="absolute top-2 right-4 text-2xl text-gray-700 hover:text-black">&times;</button>
@@ -112,7 +112,7 @@
     <div class="mt-2 text-gray-600 text-xs italic">Hecho con IA y visión industrial.</div>
   </footer>
 
-  <!-- SCRIPT DEL VIDEO -->
+  <!-- SCRIPT VIDEO -->
   <script>
     function reproducirDemo() {
       const video = document.getElementById('videoDemo');
